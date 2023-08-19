@@ -1,4 +1,4 @@
-import os, socket
+import os, socket, signal
 from threading import Thread
 
 # This server starts up at localhost:1234 and prints any message send there. You can use it to dry-test your clients
@@ -21,4 +21,4 @@ pid = os.getpid()
 server = ServerThread()
 server.start()
 input(f"Debugging server is listening at '{HOST}:{PORT}', press any key to quit...\n\n")
-os.kill(pid, 9)
+os.kill(pid, signal.SIGTERM)
