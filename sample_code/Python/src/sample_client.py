@@ -13,8 +13,15 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
     ## - Get canvas size: SIZE
     ## - Set offset of width w and height h for the duration of the connection: OFFSET <w> <h>
 
+    sock.sendall(b"SIZE\n")
+    print(sock.recv(1024))
+    
     sock.sendall(b"OFFSET 20 20\n")
-    sock.sendall(b"PX 5 5 FF0000\n")
+    msg = bytes(f"PX 13 37 FF0000\n", "UTF-8")
+    sock.sendall(msg)
+    
+    sock.sendall(b"PX 13 37\n")
+    print(sock.recv(1024))
 
     ## If you want to received messages, handling might look like this
     # data = sock.rcv(1024)
