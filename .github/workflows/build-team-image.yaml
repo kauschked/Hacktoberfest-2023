@@ -80,7 +80,7 @@ jobs:
           tags: ${{ steps.docker_meta.outputs.tags }}
           labels: ${{ steps.docker_meta.outputs.labels }}
 
-      - name: 💿 Build Image
+      - name: 🚀 Build and push Image
         if: ${{ github.event_name == 'push' }}
         uses: docker/build-push-action@v4
         with:
