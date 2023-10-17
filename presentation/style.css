@@ -1,0 +1,152 @@
+html, body, div, span, object, iframe {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    color: #ffffff;
+    background-color: rgb(21,44,90)
+}
+
+tt {
+    font-family: Monaco, monospace;
+}
+
+.step {
+    width: 84vw;
+    height: 84vh;
+    padding: 8vh 8vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.step::before {
+    content: "";
+    background-image: url(images/IDG-logo-white.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    position: fixed;
+    top: 1.5rem;
+    right: 3rem;
+    height: 5rem;
+    width: 8vw;
+}
+.step::after {
+    content: url(images/slides-lower.png);
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    margin-left: -8vw;
+    overflow: hidden;
+    margin-bottom: -4px;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    color:#ffffff;
+    margin-top: 0.3em;
+}
+
+a {
+    color: #ffffff;
+}
+
+h1 {
+    font-size: 3.3em;
+}
+
+h2 {
+    font-size: 3em;
+}
+
+h3 {
+    font-size: 2.8rem;
+}
+
+h4 {
+    font-size: 2.3rem;
+}
+
+p, .code, ul,ol,dl {
+    font-size: 2rem;
+}
+
+li {
+    margin-bottom: .2ex;
+}
+
+li > ul {
+    margin-bottom: .5ex;
+}
+
+.code {
+    background-color: rgb(0,15,30);
+    padding: 1.5rem;
+    font-family: Monaco, monospace;
+    width: fit-content;
+}
+
+.code > span {
+    background-color: inherit;
+}
+
+.step.cover-class {
+    background-color: #004f9f;
+    background-size: 100% auto; 
+}
+
+.step.cover-class::before {
+    content: "";
+    background-image: url(images/slides-cover-cutout.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto; 
+    position: fixed;
+    top: unset;
+    right: unset;
+    height: 100vh;
+    width: 100vw;
+    margin-left: -8vw;
+    z-index: -10;
+}
+
+.step.cover-class::after {
+    content: none;
+}
+
+.step.cover-class img {
+    position: fixed;
+    right: 16vw;
+    height: 100vh;
+    width: fit-content;
+    z-index: -15;
+}
+
+.step.right-class > * {
+    max-width: 41.5vw;
+}
+
+.step.right-class img, .step.right-class .code {
+    position: fixed;
+    right: 8vw;
+    max-width: 49.5vw;
+}
+
+.step.full-slide-class img{
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+}
+
+.step.right-class img.inline-class {
+    position: initial;
+    right: unset;
+    max-width: none;
+}
