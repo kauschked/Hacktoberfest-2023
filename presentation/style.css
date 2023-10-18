@@ -124,7 +124,8 @@ li > ul {
 .step.cover-class img {
     position: fixed;
     right: 16vw;
-    height: 100vh;
+    top: 0;
+    height: 84vh;
     width: fit-content;
     z-index: -15;
 }
