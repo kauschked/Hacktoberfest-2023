@@ -91,10 +91,10 @@ Of course you can network (talk to people, share socials and stuff)
 But sometimes you NEED network
 
 * Use the wired connection
-
-OR
-
-* restricted
+* WiFi:
+    * SSID: restricted | Pass: restricted
+    * For our colleges:
+        Please also use **this** WiFi!
 
 .. image:: images/wifi_meme.png
    :width: 500px
@@ -357,7 +357,7 @@ Summary
 WiFi
 ----
 
-* restricted
+SSID: restricted | Pass: restricted
 
 ----
 
