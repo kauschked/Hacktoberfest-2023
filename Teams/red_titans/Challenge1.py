@@ -11,5 +11,5 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
     YMAX=1079
     for y in range(YMIN, YMAX+1):
       for x in range(XMIN, XMAX+1):
-             msg = bytes(f"PX {y} {x} FF0000\n", "UTF-8")
+             msg = bytes(f"PX {x} {y} FF0000\n", "UTF-8")
              sock.sendall(msg)
