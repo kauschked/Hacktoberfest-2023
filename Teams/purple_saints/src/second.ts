@@ -3,16 +3,20 @@ import { createCanvas, loadImage } from 'canvas';
 
 const host: string = '127.0.0.1';
 const port: number = 1234;
+/* 
+const host: string = '10.201.77.56';
+const port: number = 4321; */
 
-const MAX_X: number = 1285;
-const MAX_Y: number = 725;
+
+const MAX_X: number = 0;
+const MAX_Y: number = 0;
 
 export async function mainSecond() {
     const socket = new Socket();
     socket.connect(port, host, () => {
         console.log('Connected to Pixelflut server.');
         socket.write('SIZE\n');
-    });
+    }); 
 
     socket.on('data', (data: any) => {
         const message: string = data.toString();
@@ -30,22 +34,41 @@ export async function mainSecond() {
 
 async function sendImageToServer(socket: Socket, imagePath: string) {
     const image = await loadImage(imagePath);
-    const canvas = createCanvas(image.width, image.height);
+    const canvas = createCanvas(MAX_X, MAX_Y);
     const ctx = canvas.getContext('2d');
-    ctx.drawImage(image, 0, 0, image.width, image.height);
 
-    const startX = MAX_X - image.width;
-    const startY = MAX_Y - image.height;
+    let startX = MAX_X;
+    let startY = MAX_Y;
 
+    let direction = -5;
+
+    setInterval(() => {
+        ctx.fillStyle = 'black';
+        ctx.fillRect(startX, startY, image.width, image.height);
+        startY += direction;
+        if (startY <= 0 || startY + image.height >= MAX_Y) {
+            direction = -direction;
+        }
+        ctx.drawImage(image, startX, startY, image.width, image.height);
+        sendCanvasData(socket, ctx);
+
+    }, 100);
+}
+
+
+
+
+function sendCanvasData(socket: Socket, ctx: any) {
     let output: string = '';
-    for (let x = 0; x < image.width; x++) {
-        for (let y = 0; y < image.height; y++) {
+    for (let x = 0; x < MAX_X; x++) {
+        for (let y = 0; y < MAX_Y; y++) {
             const pixel = ctx.getImageData(x, y, 1, 1).data;
-            const hexColor = rgbToHex(pixel[0], pixel[1], pixel[2]);
-            output += `PX ${startX + x} ${startY + y} ${hexColor}\n`;
+            if (pixel[3] !== 0) { // If pixel is not transparent
+                const hexColor = rgbToHex(pixel[0], pixel[1], pixel[2]);
+                output += `PX ${x} ${y} ${hexColor}\n`;
+            }
         }
     }
-    
     socket.write(output);
 }
 

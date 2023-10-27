@@ -15,3 +15,4 @@ COPY src/ src/
 
 #CMD [ "python", "./Challenge1.py"]
 CMD [ "/usr/app/.venv/bin/python3", "/usr/app/src/simple_client.py"]
+
