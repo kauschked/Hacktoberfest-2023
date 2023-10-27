@@ -1,8 +1,13 @@
-FROM subfuzion/netcat
+FROM node:16.6.1
 
-ENV X=1285
-ENV Y=725
-ENV COLOR=f00af0
+WORKDIR /app
 
-ENTRYPOINT sh -c "echo -en 'PX ${X} ${Y} ${COLOR}\n' | nc -q1 localhost 1234"
-CMD []
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+RUN npx tsc src/first.ts
+
+CMD ["node", "src/first.js"]
