@@ -34,9 +34,8 @@ async function sendImageToServer(socket: Socket, imagePath: string) {
     const ctx = canvas.getContext('2d');
     ctx.drawImage(image, 0, 0, image.width, image.height);
 
-    // Randomize starting X and Y based on the given ENV and the image size
-    const startX = Math.floor(Math.random() * (MAX_X - image.width));
-    const startY = Math.floor(Math.random() * (MAX_Y - image.height));
+    const startX = MAX_X - image.width;
+    const startY = MAX_Y - image.height;
 
     let output: string = '';
     for (let x = 0; x < image.width; x++) {
