@@ -4,8 +4,8 @@ import numpy as np
 from PIL import Image
 
 
-HOST = "10.201.77.56" # localhost
-PORT = 4321        # pixelflut-port
+HOST = "127.0.0.1" # localhost
+PORT = 1234        # pixelflut-port
 
 OFFSET_X=5
 OFFSET_Y=365
