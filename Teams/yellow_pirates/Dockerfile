@@ -4,4 +4,4 @@ RUN mkdir /app
 
 COPY ./src/* /app
 
-ENTRYPOINT ["python", "/app/main.py"]
+ENTRYPOINT ["python", "/app/main_color_gradient.py"]
