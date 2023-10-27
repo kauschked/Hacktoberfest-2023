@@ -13,7 +13,7 @@ public class Inception {
   static int serverPort = 1234;
   public static void main(String[] args) throws IOException {
     BufferedImage image = ImageIO.read(
-        new File("inception.png"));
+        new File("/usr/app/src/inception.png"));
     Socket socket = new Socket(serverHost,serverPort);
     OutputStream outputStream = socket.getOutputStream();
     BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outputStream));
