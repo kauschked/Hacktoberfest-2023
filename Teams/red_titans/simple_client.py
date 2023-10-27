@@ -3,7 +3,7 @@ import random
 from PIL import Image
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect(("10.201.77.56", 4321))
+s.connect(("127.0.0.0", 1234))
 
 def pixel(x,y,r,g,b,a=255):
     if a == 255:
