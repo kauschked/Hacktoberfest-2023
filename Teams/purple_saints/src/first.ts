@@ -1,11 +1,11 @@
 import { Socket } from 'net';
 
-const host: string = '127.0.0.1';
-const port: number = 1234;
+const host: string = '10.201.77.56';
+const port: number = 4321;
 const colors: string[] = ['00ff00', 'e28211', 'ff0000', '99b259', '0000ff'];
-const xOffset: number = 10;
-const yOffset: number = 10;
-const cubeSize: number = 5;
+const xOffset: number = 50;
+const yOffset: number = 50;
+const cubeSize: number = 50;
 
 async function main() {
     const socket = new Socket();
