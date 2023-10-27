@@ -64,7 +64,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
     y_offset = 0
     for x in range(320):
         # print(rgb(x))
-        command = "\n".join([get_draw_color_command(x + x_offset,y+y_offset, rgb(x)) for y in range(180)])
+        command = "\n".join([get_draw_color_command(x + x_offset,y+y_offset, rgb(x*4)) for y in range(180)])
         # print(command)
         msg = bytes(f"{command}\n", "UTF-8")
         sock.sendall(msg)
