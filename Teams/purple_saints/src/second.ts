@@ -9,7 +9,7 @@ const port: number = 4321; */
 
 
 const MAX_X: number = 1919;
-const MAX_Y: number = 1079;
+const MAX_Y: number = 500;
 
 export async function mainSecond() {
     const socket = new Socket();
