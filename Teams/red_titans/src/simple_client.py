@@ -3,7 +3,8 @@ import random
 from PIL import Image
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect(("127.0.0.0", 1234))
+#s.connect(("10.201.77.56", 4321))
+s.connect(("127.0.0.1", 1234))
 
 def pixel(x,y,r,g,b,a=255):
     if a == 255:
@@ -61,11 +62,25 @@ def worm(x,y,n,r,g,b):
 def blit(x, y, image):
     for ix in range(0, image.width):
         for iy in range(0, image.height):
-            r, g, b, _ = image.getpixel((ix,iy))
+            r, g, b = image.getpixel((ix,iy))
             pixel(ix,iy,r,g,b)
 
-img = Image.open('rgb.png')
-smallimg = img.resize((638,358))
-blit(641,721,smallimg)
+def clean(xmin, xmax, ymin, ymax):
+    print("clean ...")
+    for ix in range(xmin, xmax+1):
+        for iy in range(ymin, ymax+1):
+            pixel(ix,iy,0,0,0)
 
-s.close()
+def run():
+    #img = Image.open('src/rgb.png')
+    img = Image.open('src/rgb_3d_gradient.png')
+    smallimg = img.resize((638,358))
+    #blit(641,721,smallimg)
+    blit(641,721,smallimg)
+    s.close()
+
+
+if __name__ == "__main__":
+    #clean(0,1000,0,1000)
+    run()
+    s.close()
