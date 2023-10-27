@@ -1,8 +1,12 @@
-FROM subfuzion/netcat
+FROM node:16
 
 ENV X=1285
 ENV Y=725
 ENV COLOR=f00af0
 
-ENTRYPOINT sh -c "echo -en 'PX ${X} ${Y} ${COLOR}\n' | nc -q1 localhost 1234"
-CMD []
+RUN npm install
+
+RUN npx tsc src/first.ts
+
+# Führen Sie das kompilierte JavaScript-Programm aus
+ENTRYPOINT [ "node", "src/first.js" ]
