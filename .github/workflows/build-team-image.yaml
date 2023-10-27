@@ -90,16 +90,16 @@ jobs:
           tags: ${{ steps.docker_meta.outputs.tags }}
           labels: ${{ steps.docker_meta.outputs.labels }}
 
-  cleanup-images:
-    name: Cleanup untagged images from ghcr
-    if: ${{ github.event_name == 'push' }}
-    runs-on: ubuntu-latest
-    needs: find-team-changes
-    steps:
+  # cleanup-images:
+  #   name: Cleanup untagged images from ghcr
+  #   if: ${{ github.event_name == 'push' }}
+  #   runs-on: ubuntu-latest
+  #   needs: find-team-changes
+  #   steps:
 
-      - name: 🗑️ Cleanup old untagged images
-        uses: dylanratcliffe/delete-untagged-containers@v1.2.3
-        with:
-          org: ${{ github.repository_owner }}
-          token: ${{ secrets.HACKTOBERFEST2023_PAT }}
-          package_name: 'hacktoberfest-2023'
+  #     - name: 🗑️ Cleanup old untagged images
+  #       uses: dylanratcliffe/delete-untagged-containers@v1.2.3
+  #       with:
+  #         org: ${{ github.repository_owner }}
+  #         token: ${{ secrets.HACKTOBERFEST2023_PAT }}
+  #         package_name: 'hacktoberfest-2023'
