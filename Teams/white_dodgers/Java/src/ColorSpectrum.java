@@ -29,20 +29,17 @@ public class ColorSpectrum {
       System.out.printf("Detected size: %s x %s%n", answer[1], answer[2]);
 
       System.out.println("Painting...");
-      int step = 0;
-      while (true) {
-        final String color = colors.get(step % colors.size());
-        System.out.printf("Color: %s\n", color);
-        final StringBuilder output = new StringBuilder(cubeSize * cubeSize);
-        for (int x = xOffset; x < xOffset + cubeSize; x++) {
-          for (int y = yOffset; y < yOffset + cubeSize; y++) {
-            output.append(String.format("PX %d %d %s\n", x, y, color));
-          }
+        StringBuilder out = new StringBuilder();
+        for (int x = 0; x < 500; x++) {
+            Random random = new Random();
+            int nextInt = random.nextInt(0xffffff + 1);
+            String colorCode = String.format("#%06x", nextInt);
+            for (int y = 0; y < 200; y++) {
+                out.append(String.format("PX %d %d %s\n", x, y, colorCode.replace("#", "")));
+            }
         }
-        writer.print(output);
+        writer.print(out);
         writer.flush();
-        Thread.sleep(500);
-        step++;
       }
     }
   }
