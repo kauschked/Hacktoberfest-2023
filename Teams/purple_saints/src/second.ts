@@ -8,8 +8,8 @@ const host: string = '10.201.77.56';
 const port: number = 4321; */
 
 
-const MAX_X: number = 1919;
-const MAX_Y: number = 500;
+const MAX_X: number = 0;
+const MAX_Y: number = 0;
 
 export async function mainSecond() {
     const socket = new Socket();

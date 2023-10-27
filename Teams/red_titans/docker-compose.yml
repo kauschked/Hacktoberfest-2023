@@ -5,5 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     network_mode: host
-    #command: "/bin/bash"
-    command: "/usr/app/src/.venv/bin/python3 ./simple_client.py"
+    volumes:
+      - ./src/:/usr/app/src/
+    #command: "/usr/app/.venv/bin/python3 /usr/app/src/simple_client.py"
+    command: "/usr/app/.venv/bin/python3 /usr/app/src/simple_client.py"
