@@ -10,7 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "net": "^1.0.2",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "canvas": "^2.6.1"
   },
   "devDependencies": {
     "@types/node": "^20.8.9"
