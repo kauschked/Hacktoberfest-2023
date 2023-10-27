@@ -69,6 +69,11 @@ def blit(x, y, image):
             r, g, b = image.getpixel((ix,iy))
             pixel(ix,iy,r,g,b)
 
+def clean(xmin, xmax, ymin, ymax):
+    for ix in range(xmin, xmax+1):
+        for iy in range(ymin, ymax+1):
+            pixel(ix,iy,0,0,0)
+
 #img = Image.open('src/rgb.png')
 img = Image.open('src/rgb_3d_gradient.png')
 smallimg = img.resize((638,358))
