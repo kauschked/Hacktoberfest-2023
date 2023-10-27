@@ -74,11 +74,4 @@ img = Image.open('src/rgb_3d_gradient.png')
 smallimg = img.resize((638,358))
 #blit(641,721,smallimg)
 blit(641,721,smallimg)
-
-<<<<<<<< HEAD:Teams/red_titans/src/simple_client.py
-print("test ...")
-
 s.close()
-========
-s.close()
->>>>>>>> main:Teams/red_titans/src/Challenge1.py
