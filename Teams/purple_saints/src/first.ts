@@ -5,7 +5,8 @@ const port: number = 4321;
 const colors: string[] = ['00ff00', 'e28211', 'ff0000', '99b259', '0000ff'];
 const xOffset: number = 50;
 const yOffset: number = 50;
-const cubeSize: number = 50;
+const xlen: number = 640;
+const ylen: number = 360;
 
 async function main() {
     const socket = new Socket();
@@ -38,8 +39,8 @@ function startPainting(socket: Socket) {
         console.log(`Color: ${color}`);
 
         let output: string = '';
-        for (let x = xOffset; x < xOffset + cubeSize; x++) {
-            for (let y = yOffset; y < yOffset + cubeSize; y++) {
+        for (let x = xOffset; x < xOffset + xlen; x++) {
+            for (let y = yOffset; y < yOffset + ylen; y++) {
                 output += `PX ${x} ${y} ${color}\n`;
             }
         }
