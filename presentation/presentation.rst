@@ -31,9 +31,9 @@ What will happen now
 --------------------
 
 * 📍 You are here
-* 🎤 Challange Explanations
+* 🎤 Challenge Explanations
 * 🎤 GitHub Worklow Demo
-* 🍴 Buffet starting around 7:45 PM (Also vegitarian)
+* 🍴 Buffet starting around 7:45 PM (Also vegetarian)
 * 🐱‍💻 Challenge time
 * 🚪 Official end is 11 PM
 
@@ -60,7 +60,7 @@ Hacktoberfest
 * As every year GitHub encourage developers for open-source work.
 * 4 Pull Requests must be made on repositories with the label `hacktoberfest`
 * The PR's must be approved to count after a grace period of 7 days
-* You will get a digital avard after completing
+* You will get a digital award after completion
 
 **And you need to be registered:** https://hacktoberfest.com/
 
@@ -93,7 +93,7 @@ But sometimes you NEED network
 * Use the wired connection
 * WiFi:
     * SSID: restricted | Pass: restricted
-    * For our colleges:
+    * For our colleagues:
         Please also use **this** WiFi!
 
 .. image:: images/wifi_meme.png
@@ -191,7 +191,7 @@ Color Spectrum
 "Deal with it"
 ==============
 
-* Search a random animal picture and draw it
+* Search for a random animal picture and draw it
 * Use the provided glasses .png
 * Animate them moving down to the eyes of the animal
 * Background has to be restored behind the moving animation
@@ -222,13 +222,13 @@ https://github.com/HacktoberfestMunich/Hacktoberfest-2023/presentation/images/th
 
 :class: right-class
 
-.. image:: images/inception.png
+.. image:: images/animated.gif
     :width: 500px
 
 "Cube Mover"
 ============
 
-* A cube will move around in one of your areas
+* A cube will move around in one of your areas (1 Step/s)
 * Draw a border around that moving cube
 * Update it with the cube movement
 
@@ -265,7 +265,7 @@ Rules
 * Only use the group area of your team. (Find your team now 🙂)
 * There is a ``1px`` white border around your group area. Don't overwrite it.
 * Open one TCP connection per machine and reuse it!
-* All challanges needs to be updated simultaneously.
+* All challenges needs to be updated simultaneously.
 * Please speak to us when the first four challenges are solved and you are starting the maze. 
 
 ----
@@ -281,6 +281,7 @@ Playground - Server
 
 * IP: ``10.201.77.56``
 * Port: ``4321``
+* VNC-Port: ``5901``
 
 Challenge - Server
 ==================
@@ -351,7 +352,7 @@ Summary
 4. Use the test pixelflut server for ... testing
 5. Submit your solution with the Dockerfile in a PR
 6. We will accept it and CI will do some building
-7. Your container will appear on the challange playground
+7. Your container will appear on the challenge playground
 8. Reach out to us after the first 4 challenges
 
 WiFi
