@@ -1,13 +1,13 @@
-FROM eclipse-temurin:17-jdk-jammy as build
-
-COPY src/Inception.java /src/
-COPY src/inception.png /src/
-RUN javac /src/Inception.java && ls -al /src
-
 FROM eclipse-temurin:17-jdk-jammy
 
-COPY --from=build src/*.class /app/
+WORKDIR /src
 
-ENTRYPOINT cd app && java Inception
+COPY src/Inception.java .
+COPY src/inception.png .
 
 
+#COPY --from=build src/*.class /app/
+
+RUN javac /src/Inception.java
+CMD ["java /src/Inception"]
+#ENTRYPOINT ["javaXX", "InceptionXX"]
