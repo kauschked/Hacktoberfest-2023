@@ -5,7 +5,7 @@ IP = "127.0.0.1"
 PORT = 1234
 
 OFFSET_X = 1
-OFFSET_Y = 365
+OFFSET_Y = 360
 
 class Connection:
     def __init__(self, ip, port):
@@ -75,7 +75,7 @@ def interpolate_colors(initial_color, target_color, steps):
 def main():
     with Connection(IP, PORT) as conn:
         canvas_size = conn.get_canvas_size()
-        segment_size = (int((canvas_size[0] - 7 )/ 6), int((canvas_size[1] - 7)/ 6))
+        segment_size = (int((canvas_size[0] - 6 )/ 6), int((canvas_size[1] - 6)/ 6))
 
         colors = interpolate_colors(RED, GREEN, segment_size[0])
 
