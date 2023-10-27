@@ -6,4 +6,4 @@ COPY ./src/* /app
 
 # RUN --network=host python src/sample_client.py
 
-ENTRYPOINT ["python", "/app/sample_client.py"]
+ENTRYPOINT ["python", "/app/task_01.py"]
