@@ -3,7 +3,7 @@ import time
 
 HOST = "127.0.0.1" # localhost
 # HOST = "10.201.77.56" # localhost
-PORT = 4321        # pixelflut-port
+PORT = 1234        # pixelflut-port
 
 def get_draw_color_command(x,y,color):
     return f"PX {x} {y} {color}"
