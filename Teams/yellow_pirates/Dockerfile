@@ -1,5 +1,8 @@
 FROM python:3.11.4
 
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir  numpy pillow
+
 RUN mkdir /app
 
 COPY ./src/* /app
