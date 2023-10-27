@@ -1,10 +1,9 @@
 import { Socket } from 'net';
 import { createCanvas, loadImage } from 'canvas';
 
-const host: string = '10.201.77.56';
-const port: number = 4321;
+const host: string = '127.0.0.1';
+const port: number = 1234;
 
-// Get ENV variables and set to default values if they're not available
 const MAX_X: number = 1285;
 const MAX_Y: number = 725;
 
