@@ -10,6 +10,8 @@ WORKDIR /usr/app/src
 #ENTRYPOINT sh -c "echo -en 'PX ${X} ${Y} ${COLOR}\n' | nc -q1 localhost 1234"
 #to COPY the remote file at working directory in container
 COPY Challenge1.py ./
+COPY simple_client.py ./
+COPY rgb.png ./
 # Now the structure looks like this '/usr/app/src/test.py'
 
 
@@ -17,3 +19,4 @@ COPY Challenge1.py ./
 #contained by your image, along with any arguments.
 
 CMD [ "python", "./Challenge1.py"]
+CMD [ "python", "./simple_client.py"]
