@@ -1,8 +1,7 @@
-FROM subfuzion/netcat
+FROM python:3.11.4
 
-ENV X=5
-ENV Y=365
-ENV COLOR=dede04
+RUN mkdir /app
 
-ENTRYPOINT sh -c "echo -en 'PX ${X} ${Y} ${COLOR}\n' | nc -q1 localhost 1234"
-CMD []
+COPY ./src/* /app
+
+ENTRYPOINT ["python", "/app/main.py"]
