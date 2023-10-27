@@ -1,19 +1,11 @@
-FROM subfuzion/netcat
-FROM python:3.12
+FROM eclipse-temurin:17-jdk-jammy as build
 
-ENV X=645
-ENV Y=725
-ENV COLOR=e07224
-# Any working directory can be chosen as per choice like '/' or '/home' etc
-# i have chosen /usr/app/src
-WORKDIR /usr/app/
-#ENTRYPOINT sh -c "echo -en 'PX ${X} ${Y} ${COLOR}\n' | nc -q1 localhost 1234"
-RUN python3 -m venv .venv/
-RUN . .venv/bin/activate && pip install --upgrade Pillow
+COPY src/SampleClient.java /src/
+RUN javac /src/SampleClient.java && ls -al /src
 
-COPY src/ src/
+FROM eclipse-temurin:17-jdk-jammy
 
-#CMD [ "python", "./Challenge1.py"]
-#CMD [ "/usr/app/.venv/bin/python3", "/usr/app/src/RedBackground.py"]
-CMD [ "/usr/app/.venv/bin/python3", "/usr/app/src/simple_client.py"]
+COPY --from=build src/*.class /app/
+
+ENTRYPOINT cd app && java SampleClient
 
