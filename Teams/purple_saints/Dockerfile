@@ -21,3 +21,4 @@ COPY . .
 RUN npx tsc src/*.ts
 
 CMD ["node", "src/index.js"]
+

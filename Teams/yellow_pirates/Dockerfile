@@ -9,3 +9,4 @@ COPY ./src/* /app
 
 # ENTRYPOINT sh -c "echo -en 'PX ${X} ${Y} ${COLOR}\n' | nc -q1 localhost 1234"
 ENTRYPOINT ["python", "/app/c2.py"]
+
