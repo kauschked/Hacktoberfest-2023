@@ -81,6 +81,6 @@ def run():
 
 
 if __name__ == "__main__":
-    #clean(0,1000,0,1000)
+    clean(0,1000,0,1000)
     run()
     s.close()
