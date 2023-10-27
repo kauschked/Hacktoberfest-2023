@@ -1,12 +1,13 @@
-FROM node:16
+FROM node:16.6.1
 
-ENV X=1285
-ENV Y=725
-ENV COLOR=f00af0
+WORKDIR /app
+
+COPY package*.json ./
 
 RUN npm install
 
+COPY . .
+
 RUN npx tsc src/first.ts
 
-# Führen Sie das kompilierte JavaScript-Programm aus
-ENTRYPOINT [ "node", "src/first.js" ]
+CMD ["node", "src/first.js"]
