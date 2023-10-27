@@ -3,8 +3,12 @@ import random
 from PIL import Image
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+<<<<<<<< HEAD:Teams/red_titans/src/simple_client.py
 #s.connect(("10.201.77.56", 4321))
 s.connect(("127.0.0.1", 1234))
+========
+s.connect(("127.0.0.0", 1234))
+>>>>>>>> main:Teams/red_titans/src/Challenge1.py
 
 def pixel(x,y,r,g,b,a=255):
     if a == 255:
@@ -71,4 +75,10 @@ smallimg = img.resize((638,358))
 #blit(641,721,smallimg)
 blit(641,721,smallimg)
 
+<<<<<<<< HEAD:Teams/red_titans/src/simple_client.py
+print("test ...")
+
 s.close()
+========
+s.close()
+>>>>>>>> main:Teams/red_titans/src/Challenge1.py
