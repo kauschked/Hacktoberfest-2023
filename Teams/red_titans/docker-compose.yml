@@ -8,4 +8,6 @@ services:
     volumes:
       - ./src/:/usr/app/src/
     #command: "/usr/app/.venv/bin/python3 /usr/app/src/simple_client.py"
-    command: "/usr/app/.venv/bin/python3 /usr/app/src/simple_client.py"
+    #command: "/usr/app/.venv/bin/python3 /usr/app/src/simple_client.py"
+    #command: "ls -lha /src"
+    #command: "java Inception"

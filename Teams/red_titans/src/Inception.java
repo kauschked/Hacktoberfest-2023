@@ -9,7 +9,7 @@ import java.net.Socket;
 import javax.imageio.ImageIO;
 
 public class Inception {
-  static String serverHost = "127.0.0.0";
+  static String serverHost = "127.0.0.1";
   static int serverPort = 1234;
   public static void main(String[] args) throws IOException {
     BufferedImage image = ImageIO.read(
