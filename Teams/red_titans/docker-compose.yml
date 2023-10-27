@@ -1,0 +1,9 @@
+version: '4'
+services:
+  flut:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    network_mode: host
+    #command: "/bin/bash"
+    command: "/usr/app/src/.venv/bin/python3 ./simple_client.py"

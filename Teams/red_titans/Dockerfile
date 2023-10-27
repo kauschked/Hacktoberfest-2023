@@ -18,5 +18,9 @@ COPY rgb.png ./
 #CMD instruction should be used to run the software
 #contained by your image, along with any arguments.
 
-CMD [ "python", "./Challenge1.py"]
-CMD [ "python", "./simple_client.py"]
+# Isolate python env and use python3
+RUN python3 -m venv .venv/
+RUN . .venv/bin/activate && pip install --upgrade Pillow
+
+#CMD [ "python", "./Challenge1.py"]
+CMD [ "./venv/bin/python3", "./simple_client.py"]
