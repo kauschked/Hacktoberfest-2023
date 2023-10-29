@@ -6,14 +6,19 @@ ENV Y=725
 ENV COLOR=e07224
 # Any working directory can be chosen as per choice like '/' or '/home' etc
 # i have chosen /usr/app/src
-WORKDIR /usr/app/
+WORKDIR /src
 #ENTRYPOINT sh -c "echo -en 'PX ${X} ${Y} ${COLOR}\n' | nc -q1 localhost 1234"
-RUN python3 -m venv .venv/
-RUN . .venv/bin/activate && pip install --upgrade Pillow
+#RUN python3 -m venv .venv/
+#RUN . .venv/bin/activate && pip install --upgrade Pillow
 
-COPY src/ src/
+RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
+RUN pip install Pillow 
+RUN pip install opencv-python 
+
+COPY src/ /src/
 
 #CMD [ "python", "./Challenge1.py"]
 #CMD [ "/usr/app/.venv/bin/python3", "/usr/app/src/RedBackground.py"]
-CMD [ "/usr/app/.venv/bin/python3", "/usr/app/src/simple_client.py"]
+#CMD [ "/usr/app/.venv/bin/python3", "/usr/app/src/simple_client.py"]
+CMD [ "python3", "/src/simple_client.py"]
 
